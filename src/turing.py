@@ -47,13 +47,12 @@ class TuringMachine:
     def print(self, window=10):
         print('... ', end='')
         print(' '.join(self.tape[i] for i in range(self.head - window, self.head + window + 1)), end='')
-        print(f' ... state={self.current_state}')
+        print(f' ... estado={self.current_state}')
         print(f'{" " * (2 * window + 4)}^')
 
 
 if __name__ == '__main__':
 
-    
     tm = TuringMachine(states={'a', 'b', 'c', 'd', 'e', 'f', 'H'},
                 symbols={'0', '1', '_'},
                 blank_symbol='_',
@@ -79,8 +78,9 @@ if __name__ == '__main__':
                     ('f', '1'): ('f', '_', 1),
                     ('f', '_'): ('H', '_', 1),                    
                 })
-    tm.initialize({0: '1', 1: '1', 2: '_', 3: '1', 4: '0'})
-    
+    #tm.initialize({0: '1', 1: '1', 2: '1', 3: '_', 4: '1', 5: '0', 6: '1'})
+    #tm.initialize({0: '1', 1: '1', 2: '_', 3: '0', 4: '1'})
+    tm.initialize({0: '1', 1: '0', 2: '1', 3: '_', 4: '1', 5: '0', 6: '0'})
     
 
     while not tm.halted:
